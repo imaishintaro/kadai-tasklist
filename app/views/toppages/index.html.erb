@@ -4,9 +4,9 @@
       <%= form_for(@task) do |f| %>
         <div class="form-group">
           
-          <p>課題</p>
+          <p>タスク</p>
           <%= f.text_area :content, class: 'form-control', rows: 5 %>
-           <p>進捗</p>
+           <p>ステータス</p>
             <%= f.text_area :status, class: 'form-control', rows: 1 %>
           
         </div>
