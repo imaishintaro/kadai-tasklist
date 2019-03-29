@@ -1,0 +1,50 @@
+<ul class="media-list">
+    
+       <table class="table table-striped">
+                <tr >
+                  　 <th>作成者</th>
+                    <th>タスク</th>
+                    <th>進捗</th>
+                　　<th >更新時間</th>
+                　　<th>削除</th>
+                　　<th>編集</th>
+                </tr>
+                
+  <% tasks.each do |task| %>
+
+        </div>
+        
+            <tr>
+                    
+              <th> <img class="media-object img-rounded" src="<%= gravatar_url(task.user, options = { size: 30 }) %>" alt=""><%= link_to task.user.name, user_path(task.user) %></th>
+              <th><%= task.content %></th>
+              <th><%= task.status %></th>
+            　<th>  <span class="text-muted">posted at <%= task.created_at %></span></th>
+            　<th>
+            　     <% if current_user == task.user %>
+                    <%= link_to "Delete", task, method: :delete, data: { confirm: "Taskを消してもよろしいですか？" }, class: 'btn btn-danger btn-xs' %>
+                  <% end %>
+            　 </th>   
+            　     　<th>
+            　     <% if current_user == task.user %>
+                    <%= link_to "Edit", edit_task_path(task) , class: 'btn btn-success btn-xs' %>
+                  <% end %>
+            　 </th>  
+            　</th>
+            </tr>
+              
+      </div>
+
+  <% end %>
+  
+
+            </table>
+       
+  <%= paginate tasks %>
+</ul>
+
+<style>
+    
+    
+    
+</style>

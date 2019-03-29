@@ -12,6 +12,8 @@
                 <li><%= link_to 'Logout', logout_path, method: :delete %></li>
               </ul>
             </li>
+           <li><%= link_to 'TaskList',  root_url  %></li>
+            
           <% else %>
             <li><%= link_to 'Signup', signup_path %></li>
             <li><%= link_to 'Login', login_path %></li>
