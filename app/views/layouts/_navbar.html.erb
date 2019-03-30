@@ -1,24 +1,28 @@
 <header>
   <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <% if logged_in? %>
-       
-          
- 
-                <li><%= link_to 'My profile', user_path(current_user) %></li>
-                <li role="separator" class="divider"></li>
-                <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+    <div class="container">
+      <div class="navbar-header">
+
+          <ul class="nav navbar-nav navbar-right">
+            <% if logged_in? %>
+
+   
+                  <li><%= link_to 'My profile', user_path(current_user) %></li>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+                
               
+             <li><%= link_to 'TaskList',  root_url  %></li>
+              
+            <% else %>
             
-           <li><%= link_to 'TaskList',  root_url  %></li>
-            
-          <% else %>
-            <li><%= link_to 'Signup', signup_path %></li>
-            <li><%= link_to 'Login', login_path %></li>
-            <li><%= link_to 'Logout', logout_path, method: :delete %></li>
-          <% end %>
-        </ul>
+              <li><%= link_to 'Signup', signup_path %></li>
+              <li><%= link_to 'Login', login_path %></li>
+  
+            <% end %>
+          </ul>
+        </div>
       </div>
-  </nav>
+    </nav>
+
 </header>
