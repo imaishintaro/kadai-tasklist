@@ -33,7 +33,7 @@ class TasksController < ApplicationController
   def update
 
 
-    if @task.update(task_params)
+    if @tasks.update(task_params)
       flash[:success] = 'Task は正常に更新されました'
       redirect_to root_url
     else
@@ -44,7 +44,7 @@ class TasksController < ApplicationController
 
   def destroy
       
-  @task.destroy
+  @tasks.destroy
    flash[:success] = 'Taskを削除しました。'
     redirect_back(fallback_location: root_path)
   end
